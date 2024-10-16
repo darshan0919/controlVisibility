@@ -1,21 +1,38 @@
-import React from 'react';
-import './styles.css';
-import { Form } from './components/form';
-import { FORM_CONFIG } from './constants/formConfig';
-import { INITIAL_VALUES } from './constants/initialValues';
+import "./styles.css";
+import { HelloWorld } from "./components/HelloWorld";
+
+const CONFIG = {
+  entityType: "CASE",
+  filter: {
+    field: "fields._c_status",
+    value: "WORK",
+    filterType: "NOT_EQUALS",
+  },
+};
+
+const CONFIG2 = {
+  entityType: "CASE",
+  filter: {
+    filterType: "AND",
+    filters: [
+      {
+        filterType: "EQUALS",
+        field: "record.caseNu",
+        value: 123,
+      },
+      {
+        filterType: "EQUALS",
+        field: "record.fields._c_status",
+        value: "IN_PROGRESS",
+      },
+    ],
+  },
+};
 
 export default function App() {
-  const handleSave = (formData) => {
-    console.log('Save', formData);
-  };
-
   return (
     <div className="App">
-      <Form
-        onSave={handleSave}
-        formConfig={FORM_CONFIG}
-        initialValues={INITIAL_VALUES}
-      />
+      <HelloWorld visibilityConfig={CONFIG2} />
     </div>
   );
 }
