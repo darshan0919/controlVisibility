@@ -1,38 +1,46 @@
-import "./styles.css";
-import { HelloWorld } from "./components/HelloWorld";
+import './styles.css';
+import { HelloWorld } from './components/HelloWorld';
+import { useState } from 'react';
 
 const CONFIG = {
-  entityType: "CASE",
+  entityType: 'CASE',
   filter: {
-    field: "fields._c_status",
-    value: "WORK",
-    filterType: "NOT_EQUALS",
+    field: 'fields._c_status',
+    value: 'WORK',
+    filterType: 'NOT_EQUALS',
   },
 };
 
 const CONFIG2 = {
-  entityType: "CASE",
+  entityType: 'CASE',
   filter: {
-    filterType: "AND",
+    filterType: 'AND',
     filters: [
       {
-        filterType: "EQUALS",
-        field: "record.caseNu",
+        filterType: 'EQUALS',
+        field: 'record.caseNu',
         value: 123,
       },
       {
-        filterType: "EQUALS",
-        field: "record.fields._c_status",
-        value: "IN_PROGRESS",
+        filterType: 'EQUALS',
+        field: 'record.fields._c_status',
+        value: 'IN_PROGRESS',
       },
     ],
   },
 };
 
 export default function App() {
+  const [enableConfig, setEnableConfig] = useState(false);
+
   return (
-    <div className="App">
-      <HelloWorld visibilityConfig={CONFIG2} />
+    <div className="flex flex-col gap-2">
+      <button onClick={() => setEnableConfig((e) => !e)}>
+        {enableConfig
+          ? 'Disable Visibility Conditions'
+          : 'Enable Visibility Conditions'}
+      </button>
+      <HelloWorld visibilityConfig={enableConfig ? CONFIG2 : undefined} />
     </div>
   );
 }
