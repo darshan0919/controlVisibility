@@ -1,5 +1,5 @@
-import { FILTER_TYPES } from "./constants";
-import _ from "lodash";
+import { FILTER_TYPES } from './constants';
+import _ from 'lodash';
 
 const isEqualsFilterMatched = (filter, context) => {
   const fieldValue = _.get(context, filter.field);

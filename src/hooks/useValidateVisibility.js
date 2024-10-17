@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { fetchData } from "../helpers/fetchData";
-import { isFilterMatched } from "../modules/filters/isFilterMatched";
+import { useEffect, useState } from 'react';
+import { fetchData } from '../helpers/fetchData';
+import { isFilterMatched } from '../modules/filters/isFilterMatched';
 
 const INITIAL_STATE = {
   loading: true,

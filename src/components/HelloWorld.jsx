@@ -1,5 +1,5 @@
-import React from "react";
-import { withVisibility } from "../hocs/withVisibility";
+import React from 'react';
+import { withVisibility } from '../hocs/withVisibility';
 
 const HelloWorld = () => <>Hello World</>;
 
