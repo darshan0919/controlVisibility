@@ -11,7 +11,7 @@ export class Condition {
 
   // Method to evaluate the condition
   matches(context) {
-    const fieldValue = _get(context, this.field);
+    const fieldValue = _.get(context, this.field);
 
     switch (this.type) {
       case CONDITION_TYPES['EQUALS']:

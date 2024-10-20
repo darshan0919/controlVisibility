@@ -8,9 +8,15 @@ const INITIAL_STATE = {
 
 export const useFetchData = (payload) => {
   //Implement the logic for fetching data via "fetchData" function
-  const [state, setState] = useState(INITIAL_STATE);
+  const [state, setState] = useState({
+    loading: !!payload,
+  });
 
   useEffect(() => {
+    if (!payload) {
+      return;
+    }
+
     const fetch = async () => {
       setState(INITIAL_STATE);
 
@@ -23,12 +29,9 @@ export const useFetchData = (payload) => {
     };
 
     fetch();
-  }, [entityType]);
+  }, [payload]);
 
-  return {
-    data: state.data,
-    loading: state.loading,
-  };
+  return state;
 
   return {
     data: {}, // return the loaded data here

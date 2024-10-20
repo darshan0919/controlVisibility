@@ -6,10 +6,6 @@ import { useValidateCondition } from '../hooks/useValidateCondition';
 export const withVisibility = (Component) => (props) => {
   const { conditionsConfig, ...restProps } = props;
 
-  if (!conditionsConfig) {
-    return <Component {...restProps} />;
-  }
-
   const { visible, loading } = useValidateCondition(conditionsConfig);
 
   if (loading) {

@@ -3,7 +3,7 @@
 import { CASE_DATA } from '../constants/data';
 
 const entityTypeVsDataGetter = {
-  CASE: new Promise((res) => setTimeout(() => res(CASE_DATA), 500)),
+  CASE: new Promise((res) => setTimeout(() => res(CASE_DATA), 2000)),
 };
 
 export const fetchData = (payload) =>
