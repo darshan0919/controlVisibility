@@ -5,33 +5,49 @@ describe('Condition Class - matches function', () => {
     user: {
       age: 25,
       name: 'John',
-      active: true
+      active: true,
     },
     preferences: {
       theme: 'dark',
-      notifications: true
-    }
+      notifications: true,
+    },
   };
 
   // Test for EQUALS condition
   test('should return true when field value EQUALS provided value', () => {
-    const condition = new Condition({ field: 'user.age', type: 'EQUALS', value: 25 });
+    const condition = new Condition({
+      field: 'user.age',
+      type: 'EQUALS',
+      value: 25,
+    });
     expect(condition.matches(context)).toBe(true);
   });
 
   test('should return false when field value does NOT EQUAL provided value', () => {
-    const condition = new Condition({ field: 'user.age', type: 'EQUALS', value: 30 });
+    const condition = new Condition({
+      field: 'user.age',
+      type: 'EQUALS',
+      value: 30,
+    });
     expect(condition.matches(context)).toBe(false);
   });
 
   // Test for NOT_EQUALS condition
   test('should return true when field value NOT_EQUALS provided value', () => {
-    const condition = new Condition({ field: 'user.age', type: 'NOT_EQUALS', value: 30 });
+    const condition = new Condition({
+      field: 'user.age',
+      type: 'NOT_EQUALS',
+      value: 30,
+    });
     expect(condition.matches(context)).toBe(true);
   });
 
   test('should return false when field value EQUALS provided value for NOT_EQUALS condition', () => {
-    const condition = new Condition({ field: 'user.age', type: 'NOT_EQUALS', value: 25 });
+    const condition = new Condition({
+      field: 'user.age',
+      type: 'NOT_EQUALS',
+      value: 25,
+    });
     expect(condition.matches(context)).toBe(false);
   });
 
@@ -41,8 +57,8 @@ describe('Condition Class - matches function', () => {
       type: 'AND',
       conditions: [
         new Condition({ field: 'user.age', type: 'EQUALS', value: 25 }),
-        new Condition({ field: 'user.active', type: 'EQUALS', value: true })
-      ]
+        new Condition({ field: 'user.active', type: 'EQUALS', value: true }),
+      ],
     });
     expect(andCondition.matches(context)).toBe(true);
   });
@@ -52,8 +68,8 @@ describe('Condition Class - matches function', () => {
       type: 'AND',
       conditions: [
         new Condition({ field: 'user.age', type: 'EQUALS', value: 25 }),
-        new Condition({ field: 'user.active', type: 'EQUALS', value: false), // This will fail
-      ]
+        new Condition({ field: 'user.active', type: 'EQUALS', value: false }), // This will fail
+      ],
     });
     expect(andCondition.matches(context)).toBe(false);
   });
@@ -64,8 +80,8 @@ describe('Condition Class - matches function', () => {
       type: 'OR',
       conditions: [
         new Condition({ field: 'user.age', type: 'EQUALS', value: 30 }), // This will fail
-        new Condition({ field: 'user.active', type: 'EQUALS', value: true }) // This will pass
-      ]
+        new Condition({ field: 'user.active', type: 'EQUALS', value: true }), // This will pass
+      ],
     });
     expect(orCondition.matches(context)).toBe(true);
   });
@@ -75,8 +91,8 @@ describe('Condition Class - matches function', () => {
       type: 'OR',
       conditions: [
         new Condition({ field: 'user.age', type: 'EQUALS', value: 30 }), // Fail
-        new Condition({ field: 'user.active', type: 'EQUALS', value: false }) // Fail
-      ]
+        new Condition({ field: 'user.active', type: 'EQUALS', value: false }), // Fail
+      ],
     });
     expect(orCondition.matches(context)).toBe(false);
   });
@@ -90,11 +106,19 @@ describe('Condition Class - matches function', () => {
         new Condition({
           type: 'OR',
           conditions: [
-            new Condition({ field: 'preferences.theme', type: 'EQUALS', value: 'light' }), // Fail
-            new Condition({ field: 'preferences.notifications', type: 'EQUALS', value: true }) // Pass
-          ]
-        })
-      ]
+            new Condition({
+              field: 'preferences.theme',
+              type: 'EQUALS',
+              value: 'light',
+            }), // Fail
+            new Condition({
+              field: 'preferences.notifications',
+              type: 'EQUALS',
+              value: true,
+            }), // Pass
+          ],
+        }),
+      ],
     });
     expect(nestedCondition.matches(context)).toBe(true);
   });
@@ -107,11 +131,19 @@ describe('Condition Class - matches function', () => {
         new Condition({
           type: 'OR',
           conditions: [
-            new Condition({ field: 'preferences.theme', type: 'EQUALS', value: 'light' }), // Fail
-            new Condition({ field: 'preferences.notifications', type: 'EQUALS', value: false }) // Fail
-          ]
-        })
-      ]
+            new Condition({
+              field: 'preferences.theme',
+              type: 'EQUALS',
+              value: 'light',
+            }), // Fail
+            new Condition({
+              field: 'preferences.notifications',
+              type: 'EQUALS',
+              value: false,
+            }), // Fail
+          ],
+        }),
+      ],
     });
     expect(nestedCondition.matches(context)).toBe(false);
   });
