@@ -9,7 +9,7 @@ export const withVisibility = (Component) => (props) => {
   const { visible, loading } = useValidateCondition(conditionsConfig);
 
   if (loading) {
-    return <Placeholder />;
+    return <Placeholder {...restProps} />;
   }
 
   return visible ? <Component {...restProps} /> : null;

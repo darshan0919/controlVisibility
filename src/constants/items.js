@@ -49,9 +49,9 @@ export const ITEMS = [
     conditionsConfig: {
       payload: { entityType: 'PROFILE' },
       condition: new Condition({
-        field: 'record.profileName',
-        value: 'Gryffindor | Hogwarts',
-        type: 'EQUALS',
+        field: 'record.profileDetails.handle',
+        value: '@gryffindor',
+        type: 'NOT_EQUALS',
       }),
     },
   },
@@ -60,9 +60,9 @@ export const ITEMS = [
     conditionsConfig: {
       payload: { entityType: 'PROFILE' },
       condition: new Condition({
-        field: 'record.profileDetails.handle',
-        value: '@gryffindor',
-        type: 'NOT_EQUALS',
+        field: 'record.profileName',
+        value: 'Gryffindor | Hogwarts',
+        type: 'EQUALS',
       }),
     },
   },
