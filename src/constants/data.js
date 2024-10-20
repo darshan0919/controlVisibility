@@ -6,3 +6,10 @@ export const CASE_DATA = {
     _c_status: 'IN_PROGRESS',
   },
 };
+
+export const PROFILE_DATA = {
+  profileName: 'Gryffindor | Hogwarts',
+  fields: {
+    _c_handle: '@gryffindor',
+  },
+};
