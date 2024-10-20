@@ -10,7 +10,7 @@ export default function App() {
         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-1/2"
         onClick={() => setEnableConfig((enabled) => !enabled)}
       >
-        {enableConfig ? 'Hide Unmatched Items' : 'Show All Items'}
+        {!enableConfig ? 'Show Matched Items Only' : 'Show All Items'}
       </button>
       <Body enableConfig={enableConfig} />
     </div>

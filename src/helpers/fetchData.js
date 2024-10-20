@@ -1,6 +1,6 @@
 /* Do Not Change contents of this file */
 
-import { PROFILE_DATA } from '../constants/data';
+import { CASE_DATA, PROFILE_DATA } from '../constants/data';
 
 const entityTypeVsDataGetter = {
   CASE: () => new Promise((res) => setTimeout(() => res(CASE_DATA), 2000)),
