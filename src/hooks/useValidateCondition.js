@@ -1,11 +1,4 @@
-import { useEffect, useState } from 'react';
-import { fetchData } from '../helpers/fetchData';
-import { isFilterMatched } from '../modules/filters/isFilterMatched';
-
-const INITIAL_STATE = {
-  loading: true,
-  data: undefined,
-};
+import { useFetchData } from './useFetchData';
 
 export const useValidateCondition = (conditionsConfig) => {
   const { data, loading } = useFetchData(conditionsConfig.payload);

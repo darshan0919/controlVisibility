@@ -1,6 +1,6 @@
 import React from 'react';
 import { Placeholder } from '../components/Placeholder';
-import { useValidateVisibility } from '../hooks/useValidateCondition';
+import { useValidateCondition } from '../hooks/useValidateCondition';
 
 // Implement the logic for controlling the visibility of a component based on provided conditions in "conditionsConfig" prop
 export const withVisibility = (Component) => (props) => {
@@ -10,7 +10,7 @@ export const withVisibility = (Component) => (props) => {
     return <Component {...restProps} />;
   }
 
-  const { visible, loading } = useValidateVisibility(conditionsConfig);
+  const { visible, loading } = useValidateCondition(conditionsConfig);
 
   if (loading) {
     return <Placeholder />;
