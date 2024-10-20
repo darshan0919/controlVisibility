@@ -1,3 +1,5 @@
+/* Do Not Change the contents of this file */
+
 import React from 'react';
 
 export const Placeholder = ({ text }) => (

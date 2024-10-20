@@ -1,5 +1,7 @@
+/* Do Not Change the contents of this file */
+
 import React from 'react';
-import { Text } from './Text';
+import { Item } from './Item';
 import { ITEMS } from '../constants/items';
 
 export default function Body({ enableConfig }) {
@@ -9,7 +11,7 @@ export default function Body({ enableConfig }) {
       className="border border-black rounded-[8px] w-full flex flex-col gap-3 p-3 bg-yellow-100"
     >
       {ITEMS.map((item) => (
-        <Text
+        <Item
           text={item.text}
           conditionsConfig={enableConfig ? item.conditionsConfig : undefined}
         />

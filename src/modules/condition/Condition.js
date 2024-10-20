@@ -26,7 +26,7 @@ export class Condition {
         return true;
     }
 
-    // Implement the functionality for validating the the condition
+    // Implement the functionality for validating the the condition for given context
     switch (this.type) {
       case CONDITION_TYPES['EQUALS']:
 

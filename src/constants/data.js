@@ -1,4 +1,4 @@
-/* Do Not Change contents of this file */
+/* Do Not Change the contents of this file */
 
 export const CASE_DATA = {
   caseNu: 123,

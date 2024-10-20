@@ -6,8 +6,8 @@ const INITIAL_STATE = {
   data: undefined,
 };
 
+//Implement the logic for fetching data via "fetchData" function
 export const useFetchData = (payload) => {
-  //Implement the logic for fetching data via "fetchData" function
   const [state, setState] = useState({
     loading: !!payload,
   });

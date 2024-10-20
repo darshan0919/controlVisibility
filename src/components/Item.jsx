@@ -1,12 +1,14 @@
+/* Do Not Change the contents of this file */
+
 import React from 'react';
 import { withVisibility } from '../hocs/withVisibility';
 
-const Text = ({ text }) => (
+const Item = ({ text }) => (
   <div className="border border-black rounded-[8px] flex items-center p-3 bg-blue-200">
     {text}
   </div>
 );
 
-const TextWithVisibility = withVisibility(Text);
+const ItemWithVisibility = withVisibility(Item);
 
-export { TextWithVisibility as Text };
+export { ItemWithVisibility as Item };

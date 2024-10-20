@@ -1,3 +1,5 @@
+/* Do Not Change the contents of this file */
+
 import { Condition } from '../modules/condition';
 
 export const ITEMS = [
