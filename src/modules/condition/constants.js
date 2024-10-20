@@ -1,4 +1,4 @@
-export const FILTER_TYPES = {
+export const CONDITION_TYPES = {
   AND: 'AND',
   OR: 'OR',
   EQUALS: 'EQUALS',
