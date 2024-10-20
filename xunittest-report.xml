@@ -1,7 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="0" errors="0" time="0.886">
-  <testsuite name="src/__tests__/main.test.js" errors="0" failures="0" skipped="0" timestamp="2024-10-09T04:27:12" time="0.548" tests="1">
-    <testcase classname="#stripTypenames" name="when input is an object with &quot;length&quot; property present in it" time="0.001">
+<testsuites name="jest tests" tests="10" failures="8" errors="0" time="1.147">
+  <testsuite name="src/__tests__/main.test.js" errors="0" failures="8" skipped="0" timestamp="2024-10-20T22:11:43" time="0.773" tests="10">
+    <testcase classname="Condition Class - matches function" name="should return true when field value EQUALS provided value" time="0.001">
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return false when field value does NOT EQUAL provided value" time="0.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/main.test.js:24:40)
+    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return true when field value NOT_EQUALS provided value" time="0">
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return false when field value EQUALS provided value for NOT_EQUALS condition" time="0.001">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: false
+Received: true
+    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/main.test.js:35:40)
+    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return true when all AND conditions match" time="0.001">
+      <failure>TypeError: Cannot read properties of null (reading &apos;field&apos;)
+    at new Condition (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/modules/condition/Condition.js:5:17)
+    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/main.test.js:40:26)
+    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return false when one of the AND conditions fails" time="0">
+      <failure>TypeError: Cannot read properties of null (reading &apos;field&apos;)
+    at new Condition (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/modules/condition/Condition.js:5:17)
+    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/main.test.js:48:26)
+    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return true when one of the OR conditions matches" time="0.001">
+      <failure>TypeError: Cannot read properties of null (reading &apos;field&apos;)
+    at new Condition (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/modules/condition/Condition.js:5:17)
+    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/main.test.js:57:25)
+    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return false when none of the OR conditions match" time="0">
+      <failure>TypeError: Cannot read properties of null (reading &apos;field&apos;)
+    at new Condition (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/modules/condition/Condition.js:5:17)
+    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/main.test.js:65:25)
+    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return true for complex nested conditions" time="0">
+      <failure>TypeError: Cannot read properties of null (reading &apos;field&apos;)
+    at new Condition (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/modules/condition/Condition.js:5:17)
+    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/main.test.js:76:7)
+    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+    <testcase classname="Condition Class - matches function" name="should return false for complex nested conditions when inner condition fails" time="0">
+      <failure>TypeError: Cannot read properties of null (reading &apos;field&apos;)
+    at new Condition (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/modules/condition/Condition.js:5:17)
+    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/main.test.js:87:7)
+    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
+    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
     </testcase>
   </testsuite>
 </testsuites>
