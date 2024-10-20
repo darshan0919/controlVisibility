@@ -1,4 +1,11 @@
+import { renderHook } from '@testing-library/react';
+
 import { Condition } from '../modules/condition';
+
+import { useValidateCondition } from '../hooks/useValidateCondition';
+import { useFetchData } from '../hooks/useFetchData';
+
+jest.mock('../hooks/useFetchData');
 
 describe('Main Tests', () => {
   describe('Condition Class - matches function', () => {
@@ -147,6 +154,63 @@ describe('Main Tests', () => {
         ],
       });
       expect(nestedCondition.matches(context)).toBe(false);
+    });
+  });
+
+  describe('useValidateCondition', () => {
+    it('should return visible as true when conditionsConfig is not provided', () => {
+      useFetchData.mockReturnValue({ data: null, loading: false });
+
+      const { result } = renderHook(() => useValidateCondition());
+
+      expect(result.current.visible).toBe(true);
+      expect(result.current.loading).toBe(false);
+    });
+
+    it('should return loading as true when useFetchData is loading', () => {
+      useFetchData.mockReturnValue({ data: null, loading: true });
+
+      const { result } = renderHook(() => useValidateCondition());
+
+      expect(result.current.loading).toBe(true);
+    });
+
+    it('should return visible as true when condition matches', () => {
+      const condition = {
+        matches: jest.fn(() => true),
+      };
+
+      useFetchData.mockReturnValue({
+        data: { someKey: 'someValue' },
+        loading: false,
+      });
+
+      const { result } = renderHook(() => useValidateCondition({ condition }));
+
+      expect(condition.matches).toHaveBeenCalledWith({
+        record: { someKey: 'someValue' },
+      });
+      expect(result.current.visible).toBe(true);
+      expect(result.current.loading).toBe(false);
+    });
+
+    it('should return visible as false when condition does not match', () => {
+      const condition = {
+        matches: jest.fn(() => false),
+      };
+
+      useFetchData.mockReturnValue({
+        data: { someKey: 'someValue' },
+        loading: false,
+      });
+
+      const { result } = renderHook(() => useValidateCondition({ condition }));
+
+      expect(condition.matches).toHaveBeenCalledWith({
+        record: { someKey: 'someValue' },
+      });
+      expect(result.current.visible).toBe(false);
+      expect(result.current.loading).toBe(false);
     });
   });
 });

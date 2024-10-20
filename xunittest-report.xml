@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="10" failures="0" errors="0" time="1.016">
-  <testsuite name="src/__tests__/main.test.js" errors="0" failures="0" skipped="0" timestamp="2024-10-20T22:17:02" time="0.693" tests="10">
-    <testcase classname="Condition Class - matches function" name="should return true when field value EQUALS provided value" time="0.001">
+<testsuites name="jest tests" tests="14" failures="0" errors="0" time="1.386">
+  <testsuite name="src/__tests__/main.test.js" errors="0" failures="0" skipped="0" timestamp="2024-10-20T22:40:47" time="1.043" tests="14">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return true when field value EQUALS provided value" time="0.002">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return false when field value does NOT EQUAL provided value" time="0">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return false when field value does NOT EQUAL provided value" time="0">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return true when field value NOT_EQUALS provided value" time="0.001">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return true when field value NOT_EQUALS provided value" time="0">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return false when field value EQUALS provided value for NOT_EQUALS condition" time="0">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return false when field value EQUALS provided value for NOT_EQUALS condition" time="0">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return true when all AND conditions match" time="0">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return true when all AND conditions match" time="0">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return false when one of the AND conditions fails" time="0">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return false when one of the AND conditions fails" time="0">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return true when one of the OR conditions matches" time="0">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return true when one of the OR conditions matches" time="0.001">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return false when none of the OR conditions match" time="0">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return false when none of the OR conditions match" time="0">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return true for complex nested conditions" time="0.001">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return true for complex nested conditions" time="0">
     </testcase>
-    <testcase classname="Condition Class - matches function" name="should return false for complex nested conditions when inner condition fails" time="0">
+    <testcase classname="Main Tests › Condition Class - matches function" name="should return false for complex nested conditions when inner condition fails" time="0">
+    </testcase>
+    <testcase classname="Main Tests › useValidateCondition" name="should return visible as true when conditionsConfig is not provided" time="0.007">
+    </testcase>
+    <testcase classname="Main Tests › useValidateCondition" name="should return loading as true when useFetchData is loading" time="0.002">
+    </testcase>
+    <testcase classname="Main Tests › useValidateCondition" name="should return visible as true when condition matches" time="0.001">
+    </testcase>
+    <testcase classname="Main Tests › useValidateCondition" name="should return visible as false when condition does not match" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>
