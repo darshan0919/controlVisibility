@@ -9,7 +9,7 @@ export const CASE_DATA = {
 
 export const PROFILE_DATA = {
   profileName: 'Gryffindor | Hogwarts',
-  fields: {
-    _c_handle: '@gryffindor',
+  profileDetails: {
+    handle: '@gryffindor',
   },
 };

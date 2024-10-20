@@ -45,13 +45,24 @@ export const ITEMS = [
     },
   },
   {
-    text: 'Item 3',
+    text: 'Item 4',
     conditionsConfig: {
       payload: { entityType: 'PROFILE' },
       condition: new Condition({
-        field: 'profileName',
+        field: 'record.profileName',
         value: 'Gryffindor | Hogwarts',
         type: 'EQUALS',
+      }),
+    },
+  },
+  {
+    text: 'Item 5',
+    conditionsConfig: {
+      payload: { entityType: 'PROFILE' },
+      condition: new Condition({
+        field: 'record.profileDetails.handle',
+        value: '@gryffindor',
+        type: 'NOT_EQUALS',
       }),
     },
   },
