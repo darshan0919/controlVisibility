@@ -1,13 +1,20 @@
-import { renderHook } from '@testing-library/react';
+import { render, renderHook, waitFor } from '@testing-library/react';
 
 import { Condition } from '../modules/condition';
-
 import { useValidateCondition } from '../hooks/useValidateCondition';
 import { useFetchData } from '../hooks/useFetchData';
+import { withVisibility } from '../hocs/withVisibility';
 
-jest.mock('../hooks/useFetchData');
+// Dummy component for testing
+const TestComponent = (props) => <div>Test Component {props.testProp}</div>;
 
 describe('Main Tests', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    jest.restoreAllMocks();
+    jest.resetAllMocks();
+  });
+
   describe('Condition Class - matches function', () => {
     const context = {
       user: {
@@ -157,9 +164,58 @@ describe('Main Tests', () => {
     });
   });
 
+  describe('useFetchData', () => {
+    beforeEach(() => {
+      jest.useFakeTimers(); // Use Jest's fake timers
+    });
+
+    afterEach(() => {
+      jest.clearAllTimers(); // Clear timers after each test
+    });
+
+    test('should return loading true when the payload is provided', () => {
+      const mockPayload = { entityType: 'CASE' };
+      const { result } = renderHook(() => useFetchData(mockPayload));
+
+      expect(result.current.loading).toBe(true);
+      expect(result.current.data).toBeUndefined();
+    });
+
+    test('should return loading false and data when fetchData is successful', async () => {
+      const mockPayload = { entityType: 'CASE' };
+      const { result } = renderHook(() => useFetchData(mockPayload));
+
+      jest.advanceTimersByTime(1000);
+
+      expect(result.current.loading).toBe(true);
+      expect(result.current.data).toBeUndefined();
+
+      jest.advanceTimersByTime(2000);
+
+      await waitFor(() => {
+        expect(result.current.loading).toBe(false); // Loading should be false now
+        expect(result.current.data).toEqual({
+          caseNu: 123,
+          fields: {
+            _c_status: 'IN_PROGRESS',
+          },
+        }); // Data should be the mock data
+      });
+    });
+
+    test('should handle no payload gracefully', () => {
+      const { result } = renderHook(() => useFetchData());
+
+      expect(result.current.loading).toBe(false); // Loading should be false
+      expect(result.current.data).toBeUndefined(); // Data should be undefined
+    });
+  });
+
   describe('useValidateCondition', () => {
-    it('should return visible as true when conditionsConfig is not provided', () => {
-      useFetchData.mockReturnValue({ data: null, loading: false });
+    test('should return visible as true when conditionsConfig is not provided', () => {
+      jest
+        .spyOn(require('../hooks/useFetchData'), 'useFetchData')
+        .mockReturnValue({ data: null, loading: false });
 
       const { result } = renderHook(() => useValidateCondition());
 
@@ -167,23 +223,27 @@ describe('Main Tests', () => {
       expect(result.current.loading).toBe(false);
     });
 
-    it('should return loading as true when useFetchData is loading', () => {
-      useFetchData.mockReturnValue({ data: null, loading: true });
+    test('should return loading as true when useFetchData is loading', () => {
+      jest
+        .spyOn(require('../hooks/useFetchData'), 'useFetchData')
+        .mockReturnValue({ data: null, loading: true });
 
       const { result } = renderHook(() => useValidateCondition());
 
       expect(result.current.loading).toBe(true);
     });
 
-    it('should return visible as true when condition matches', () => {
+    test('should return visible as true when condition matches', () => {
       const condition = {
         matches: jest.fn(() => true),
       };
 
-      useFetchData.mockReturnValue({
-        data: { someKey: 'someValue' },
-        loading: false,
-      });
+      jest
+        .spyOn(require('../hooks/useFetchData'), 'useFetchData')
+        .mockReturnValue({
+          data: { someKey: 'someValue' },
+          loading: false,
+        });
 
       const { result } = renderHook(() => useValidateCondition({ condition }));
 
@@ -194,15 +254,17 @@ describe('Main Tests', () => {
       expect(result.current.loading).toBe(false);
     });
 
-    it('should return visible as false when condition does not match', () => {
+    test('should return visible as false when condition does not match', () => {
       const condition = {
         matches: jest.fn(() => false),
       };
 
-      useFetchData.mockReturnValue({
-        data: { someKey: 'someValue' },
-        loading: false,
-      });
+      jest
+        .spyOn(require('../hooks/useFetchData'), 'useFetchData')
+        .mockReturnValue({
+          data: { someKey: 'someValue' },
+          loading: false,
+        });
 
       const { result } = renderHook(() => useValidateCondition({ condition }));
 
@@ -211,6 +273,68 @@ describe('Main Tests', () => {
       });
       expect(result.current.visible).toBe(false);
       expect(result.current.loading).toBe(false);
+    });
+  });
+
+  describe('withVisibility HOC', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+      jest.restoreAllMocks();
+      jest.resetAllMocks();
+    });
+
+    test('should render the Placeholder when loading is true', () => {
+      // Spy on useValidateCondition and mock return value
+      jest
+        .spyOn(require('../hooks/useValidateCondition'), 'useValidateCondition')
+        .mockReturnValue({
+          loading: true,
+          visible: false,
+        });
+
+      const WrappedComponent = withVisibility(TestComponent);
+      const { getByText } = render(
+        <WrappedComponent conditionsConfig={{}} testProp="testValue" />
+      );
+
+      // Assert Placeholder is rendered
+      getByText('Loading...');
+    });
+
+    test('should render the Component when loading is false and visible is true', () => {
+      // Spy on useValidateCondition and mock return value
+      jest
+        .spyOn(require('../hooks/useValidateCondition'), 'useValidateCondition')
+        .mockReturnValue({
+          loading: false,
+          visible: true,
+        });
+
+      const WrappedComponent = withVisibility(TestComponent);
+      const { getByText } = render(
+        <WrappedComponent conditionsConfig={{}} testProp="testValue" />
+      );
+
+      // Assert TestComponent is rendered
+      getByText('Test Component testValue');
+    });
+
+    test('should render null when loading is false and visible is false', () => {
+      // Spy on useValidateCondition and mock return value
+      jest
+        .spyOn(require('../hooks/useValidateCondition'), 'useValidateCondition')
+        .mockReturnValue({
+          loading: false,
+          visible: false,
+        });
+
+      const WrappedComponent = withVisibility(TestComponent);
+      const { container } = render(
+        <WrappedComponent conditionsConfig={{}} testProp="testValue" />
+      );
+
+      // Assert null is rendered
+      expect(container.firstChild).toBeNull();
     });
   });
 });

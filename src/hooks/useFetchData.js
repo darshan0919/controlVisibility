@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchData } from '../helpers/fetchData';
 
-const INITIAL_STATE = {
-  loading: true,
-  data: undefined,
-};
-
 //Implement the logic for fetching data via "fetchData" function
 export const useFetchData = (payload) => {
   const [state, setState] = useState({
@@ -17,18 +12,27 @@ export const useFetchData = (payload) => {
       return;
     }
 
-    const fetch = async () => {
-      setState(INITIAL_STATE);
+    try {
+      const fetch = async () => {
+        setState({
+          loading: true,
+          data: undefined,
+        });
 
-      const fetchedData = await fetchData(payload);
+        const fetchedData = await fetchData(payload);
 
+        setState({
+          loading: false,
+          data: fetchedData,
+        });
+      };
+
+      fetch();
+    } catch (e) {
       setState({
         loading: false,
-        data: fetchedData,
       });
-    };
-
-    fetch();
+    }
   }, [payload]);
 
   return state;
