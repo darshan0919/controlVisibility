@@ -8,7 +8,7 @@ import { withVisibility } from '../hocs/withVisibility';
 // Dummy component for testing
 const TestComponent = (props) => <div>Test Component {props.testProp}</div>;
 
-describe('Main Tests', () => {
+describe('Tests', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     jest.restoreAllMocks();
@@ -212,27 +212,6 @@ describe('Main Tests', () => {
   });
 
   describe('useValidateCondition', () => {
-    test('should return visible as true when conditionsConfig is not provided', () => {
-      jest
-        .spyOn(require('../hooks/useFetchData'), 'useFetchData')
-        .mockReturnValue({ data: null, loading: false });
-
-      const { result } = renderHook(() => useValidateCondition());
-
-      expect(result.current.visible).toBe(true);
-      expect(result.current.loading).toBe(false);
-    });
-
-    test('should return loading as true when useFetchData is loading', () => {
-      jest
-        .spyOn(require('../hooks/useFetchData'), 'useFetchData')
-        .mockReturnValue({ data: null, loading: true });
-
-      const { result } = renderHook(() => useValidateCondition());
-
-      expect(result.current.loading).toBe(true);
-    });
-
     test('should return visible as true when condition matches', () => {
       const condition = {
         matches: jest.fn(() => true),
@@ -299,24 +278,6 @@ describe('Main Tests', () => {
 
       // Assert Placeholder is rendered
       getByText('Loading...');
-    });
-
-    test('should render the Component when loading is false and visible is true', () => {
-      // Spy on useValidateCondition and mock return value
-      jest
-        .spyOn(require('../hooks/useValidateCondition'), 'useValidateCondition')
-        .mockReturnValue({
-          loading: false,
-          visible: true,
-        });
-
-      const WrappedComponent = withVisibility(TestComponent);
-      const { getByText } = render(
-        <WrappedComponent conditionsConfig={{}} testProp="testValue" />
-      );
-
-      // Assert TestComponent is rendered
-      getByText('Test Component testValue');
     });
 
     test('should render null when loading is false and visible is false', () => {

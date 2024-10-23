@@ -8,7 +8,7 @@ import { withVisibility } from '../hocs/withVisibility';
 // Dummy component for testing
 const TestComponent = (props) => <div>Test Component {props.testProp}</div>;
 
-describe('Main Tests', () => {
+describe('Tests', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     jest.restoreAllMocks();
