@@ -289,7 +289,7 @@ describe('Tests', () => {
         });
 
       const WrappedComponent = withVisibility(TestComponent);
-      const { container } = render(
+      const { getByText } = render(
         <WrappedComponent conditionsConfig={{}} text="test widget" />
       );
 
