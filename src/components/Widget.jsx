@@ -1,13 +1,12 @@
 /* Do Not Change the contents of this file */
 
 import React from 'react';
+
 import { withVisibility } from '../hocs/withVisibility';
 
-const Widget = ({ text }) => (
-  <div className="border border-black rounded-[8px] flex widgets-center p-3 bg-blue-200 h-[120px]">
-    {text}
-  </div>
-);
+import { CLASSNAME } from '../constants/className';
+
+const Widget = ({ text }) => <div className={CLASSNAME}>{text}</div>;
 
 const WidgetWithVisibility = withVisibility(Widget);
 

@@ -1,8 +1,5 @@
 import { useFetchData } from './useFetchData';
 
-//utils
-import { Condition } from '../modules/condition';
-
 export const useValidateCondition = (conditionsConfig) => {
   const { data, loading } = useFetchData(conditionsConfig?.payload);
   const context = { record: data };

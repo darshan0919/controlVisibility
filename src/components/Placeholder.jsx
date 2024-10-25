@@ -2,8 +2,8 @@
 
 import React from 'react';
 
+import { CLASSNAME } from '../constants/className';
+
 export const Placeholder = ({ text }) => (
-  <div className="border border-black rounded-[8px] flex widgets-center p-3 bg-green-200">
-    {text} Loading...
-  </div>
+  <div className={`${CLASSNAME} bg-green-200`}>{text} Loading...</div>
 );
