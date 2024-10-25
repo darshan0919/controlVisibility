@@ -4,6 +4,6 @@ import React from 'react';
 
 import { CLASSNAME } from '../constants/className';
 
-export const Placeholder = ({ text }) => (
-  <div className={`${CLASSNAME} bg-green-200`}>{text} Loading...</div>
+export const ContentHiddenPlaceholder = ({ text }) => (
+  <div className={`${CLASSNAME} bg-red-200`}>{text} is hidden</div>
 );

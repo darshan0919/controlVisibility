@@ -6,7 +6,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { withVisibility } from '../hocs/withVisibility';
 
 // Dummy component for testing
-const TestComponent = (props) => <div>Test Component {props.testProp}</div>;
+const TestComponent = ({ text }) => <div>{props.text}</div>;
 
 describe('Tests', () => {
   beforeEach(() => {
@@ -273,11 +273,10 @@ describe('Tests', () => {
 
       const WrappedComponent = withVisibility(TestComponent);
       const { getByText } = render(
-        <WrappedComponent conditionsConfig={{}} testProp="testValue" />
+        <WrappedComponent conditionsConfig={{}} text="test widget" />
       );
 
-      // Assert Placeholder is rendered
-      getByText('Loading...');
+      getByText('test widget is loading...');
     });
 
     test('should render null when loading is false and visible is false', () => {
@@ -291,11 +290,10 @@ describe('Tests', () => {
 
       const WrappedComponent = withVisibility(TestComponent);
       const { container } = render(
-        <WrappedComponent conditionsConfig={{}} testProp="testValue" />
+        <WrappedComponent conditionsConfig={{}} text="test widget" />
       );
 
-      // Assert null is rendered
-      expect(container.firstChild).toBeNull();
+      getByText('test widget is hidden');
     });
   });
 });

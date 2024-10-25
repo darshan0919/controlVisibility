@@ -1,21 +1,21 @@
 import React from 'react';
 
 //components
-import { Placeholder } from '../components/Placeholder';
+import { Loader } from '../components/Loader';
+import { ContentHiddenPlaceholder } from '../components/ContentHiddenPlaceholder';
 
 //hooks
 import { useValidateCondition } from '../hooks/useValidateCondition';
 
-// Implement the logic for controlling the visibility of a component based on provided conditions in "conditionsConfig" prop
-/*
-1. When the 'loading' is true, show placeholder using "Placeholder" component
-2. Once loading is false, hide or show the Component based on 'visible' flag
-*/
-
+// Implement the logic for controlling the visibility of component based on provided conditions in "conditionsConfig" prop
 export const withVisibility = (Component) => (props) => {
   const { conditionsConfig, ...restProps } = props;
 
   const { visible, loading } = useValidateCondition(conditionsConfig);
+
+  /*
+    Based on 'loading' and 'visible' flags show either 'Loader' or 'ContentHiddenPlaceholder' or 'Component' itself
+  */
 
   return <Component {...restProps} />;
 };
