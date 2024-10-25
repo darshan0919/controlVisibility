@@ -19,9 +19,6 @@ export const WIDGETS = [
   },
   {
     text: 'Widget 2',
-  },
-  {
-    text: 'Widget 3',
     conditionsConfig: {
       payload: { entityType: 'CASE' },
       condition: new Condition({
@@ -40,6 +37,9 @@ export const WIDGETS = [
         ],
       }),
     },
+  },
+  {
+    text: 'Widget 3',
   },
   {
     text: 'Widget 4',
