@@ -2,9 +2,9 @@
 
 import { Condition } from '../modules/condition';
 
-export const ITEMS = [
+export const WIDGETS = [
   {
-    text: 'Item 1',
+    text: 'Widget 1',
     conditionsConfig: {
       payload: { entityType: 'CASE' },
       condition: new Condition({
@@ -15,7 +15,7 @@ export const ITEMS = [
     },
   },
   {
-    text: 'Item 2',
+    text: 'Widget 2',
     conditionsConfig: {
       payload: { entityType: 'CASE' },
       condition: new Condition({
@@ -36,7 +36,7 @@ export const ITEMS = [
     },
   },
   {
-    text: 'Item 3',
+    text: 'Widget 3',
     conditionsConfig: {
       payload: { entityType: 'CASE' },
       condition: new Condition({
@@ -47,7 +47,7 @@ export const ITEMS = [
     },
   },
   {
-    text: 'Item 4',
+    text: 'Widget 4',
     conditionsConfig: {
       payload: { entityType: 'PROFILE' },
       condition: new Condition({
@@ -58,7 +58,7 @@ export const ITEMS = [
     },
   },
   {
-    text: 'Item 5',
+    text: 'Widget 5',
     conditionsConfig: {
       payload: { entityType: 'PROFILE' },
       condition: new Condition({

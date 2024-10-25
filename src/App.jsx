@@ -7,14 +7,14 @@ export default function App() {
   const [enableConfig, setEnableConfig] = useState(false);
 
   return (
-    <div className="flex flex-col gap-4 items-center w-full">
+    <div className="flex flex-col gap-4 widgets-center w-full p-5">
+      <Body enableConfig={enableConfig} />
       <button
-        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-1/2"
+        className="px-4 py-2 border border-gray-300 text-gray-700 bg-white hover:bg-gray-100 rounded-md"
         onClick={() => setEnableConfig((enabled) => !enabled)}
       >
-        {!enableConfig ? 'Show Matched Items Only' : 'Show All Items'}
+        {!enableConfig ? 'Show Visible Widgets Only' : 'Show All Widgets'}
       </button>
-      <Body enableConfig={enableConfig} />
     </div>
   );
 }
