@@ -8,7 +8,7 @@ export default function Body({ enableConfig }) {
   return (
     <div
       key={`${enableConfig}`}
-      className="border border-black rounded-[8px] w-full grid grid-cols-2 gap-[12px] p-3 bg-yellow-100 h-[400px]"
+      className="border border-black rounded-[8px] w-full auto-rows-min grid grid-cols-2 gap-[12px] p-3 bg-yellow-100 h-[450px]"
     >
       {WIDGETS.map((widget) => (
         <Widget
