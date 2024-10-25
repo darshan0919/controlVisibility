@@ -4,6 +4,9 @@ import { Condition } from '../modules/condition';
 
 export const WIDGETS = [
   {
+    text: 'Widget 0',
+  },
+  {
     text: 'Widget 1',
     conditionsConfig: {
       payload: { entityType: 'CASE' },
@@ -16,6 +19,9 @@ export const WIDGETS = [
   },
   {
     text: 'Widget 2',
+  },
+  {
+    text: 'Widget 3',
     conditionsConfig: {
       payload: { entityType: 'CASE' },
       condition: new Condition({
@@ -36,7 +42,7 @@ export const WIDGETS = [
     },
   },
   {
-    text: 'Widget 3',
+    text: 'Widget 4',
     conditionsConfig: {
       payload: { entityType: 'CASE' },
       condition: new Condition({
@@ -47,7 +53,7 @@ export const WIDGETS = [
     },
   },
   {
-    text: 'Widget 4',
+    text: 'Widget 5',
     conditionsConfig: {
       payload: { entityType: 'PROFILE' },
       condition: new Condition({
@@ -58,7 +64,7 @@ export const WIDGETS = [
     },
   },
   {
-    text: 'Widget 5',
+    text: 'Widget 6',
     conditionsConfig: {
       payload: { entityType: 'PROFILE' },
       condition: new Condition({
