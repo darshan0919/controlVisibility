@@ -1,242 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="17" failures="17" errors="0" time="1.38">
-  <testsuite name="src/__tests__/sample.test.js" errors="0" failures="17" skipped="0" timestamp="2024-10-25T13:28:18" time="1.034" tests="17">
-    <testcase classname="Tests › Condition Class - matches function" name="should return true when field value EQUALS provided value" time="0.002">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: true
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:38:42)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+<testsuites name="jest tests" tests="17" failures="0" errors="0" time="1.376">
+  <testsuite name="src/__tests__/main.test.js" errors="0" failures="0" skipped="0" timestamp="2024-10-25T14:07:58" time="1.046" tests="17">
+    <testcase classname="Tests › Condition Class - matches function" name="should return true when field value EQUALS provided value" time="0.001">
     </testcase>
-    <testcase classname="Tests › Condition Class - matches function" name="should return false when field value does NOT EQUAL provided value" time="0">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: false
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:47:42)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › Condition Class - matches function" name="should return false when field value does NOT EQUAL provided value" time="0.001">
     </testcase>
     <testcase classname="Tests › Condition Class - matches function" name="should return true when field value NOT_EQUALS provided value" time="0">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: true
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:57:42)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
     </testcase>
-    <testcase classname="Tests › Condition Class - matches function" name="should return false when field value EQUALS provided value for NOT_EQUALS condition" time="0.001">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: false
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:66:42)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › Condition Class - matches function" name="should return false when field value EQUALS provided value for NOT_EQUALS condition" time="0">
     </testcase>
     <testcase classname="Tests › Condition Class - matches function" name="should return true when all AND conditions match" time="0">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: true
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:78:45)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
     </testcase>
-    <testcase classname="Tests › Condition Class - matches function" name="should return false when one of the AND conditions fails" time="0">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: false
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:89:45)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › Condition Class - matches function" name="should return false when one of the AND conditions fails" time="0.001">
     </testcase>
     <testcase classname="Tests › Condition Class - matches function" name="should return true when one of the OR conditions matches" time="0">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: true
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:101:44)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
     </testcase>
-    <testcase classname="Tests › Condition Class - matches function" name="should return false when none of the OR conditions match" time="0.001">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: false
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:112:44)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › Condition Class - matches function" name="should return false when none of the OR conditions match" time="0">
     </testcase>
     <testcase classname="Tests › Condition Class - matches function" name="should return true for complex nested conditions" time="0">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: true
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:138:48)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
     </testcase>
     <testcase classname="Tests › Condition Class - matches function" name="should return false for complex nested conditions when inner condition fails" time="0">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: false
-Received: undefined
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:163:48)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
     </testcase>
-    <testcase classname="Tests › useFetchData" name="should return loading true when the payload is provided" time="0.02">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: true
-Received: false
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:180:38)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › useFetchData" name="should return loading true when the payload is provided" time="0.015">
     </testcase>
-    <testcase classname="Tests › useFetchData" name="should return loading false and data when fetchData is successful" time="0.002">
-      <failure>Error: expect(received).toBe(expected) // Object.is equality
-
-Expected: true
-Received: false
-    at call (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:190:38)
-    at tryCatch (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:2:1)
-    at Generator._invoke (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:2:1)
-    at Generator.next (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:2:1)
-    at asyncGeneratorStep (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:2:1)
-    at _next (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:2:1)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:2:1
-    at new Promise (&lt;anonymous&gt;)
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:2:1)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › useFetchData" name="should return loading false and data when fetchData is successful" time="0.006">
     </testcase>
-    <testcase classname="Tests › useFetchData" name="should handle no payload gracefully" time="0.003">
-      <failure>Error: expect(received).toBeUndefined()
-
-Received: {}
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:210:35)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › useFetchData" name="should handle no payload gracefully" time="0.001">
     </testcase>
     <testcase classname="Tests › useValidateCondition" name="should return visible as true when condition matches" time="0.001">
-      <failure>Error: expect(jest.fn()).toHaveBeenCalledWith(...expected)
-
-Expected: {&quot;record&quot;: {&quot;someKey&quot;: &quot;someValue&quot;}}
-
-Number of calls: 0
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:229:33)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
     </testcase>
-    <testcase classname="Tests › useValidateCondition" name="should return visible as false when condition does not match" time="0.002">
-      <failure>Error: expect(jest.fn()).toHaveBeenCalledWith(...expected)
-
-Expected: {&quot;record&quot;: {&quot;someKey&quot;: &quot;someValue&quot;}}
-
-Number of calls: 0
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:250:33)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › useValidateCondition" name="should return visible as false when condition does not match" time="0.001">
     </testcase>
-    <testcase classname="Tests › withVisibility HOC" name="should render the Placeholder when loading is true" time="0.067">
-      <failure>ReferenceError: props is not defined
-    at TestComponent (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:9:43)
-    at renderWithHooks (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
-    at mountIndeterminateComponent (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:20103:13)
-    at beginWork (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:21626:16)
-    at beginWork$1 (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:27465:14)
-    at performUnitOfWork (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:26599:12)
-    at workLoopSync (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:26505:5)
-    at renderRootSync (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:26473:7)
-    at recoverFromConcurrentError (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:25889:20)
-    at performConcurrentWorkOnRoot (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:25789:22)
-    at flushActQueue (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react/cjs/react.development.js:2667:24)
-    at act (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react/cjs/react.development.js:2582:11)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/@testing-library/react/dist/act-compat.js:47:25
-    at renderRoot (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/@testing-library/react/dist/pure.js:180:26)
-    at render (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/@testing-library/react/dist/pure.js:271:10)
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:275:35)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › withVisibility HOC" name="should render the Placeholder when loading is true" time="0.009">
     </testcase>
-    <testcase classname="Tests › withVisibility HOC" name="should render null when loading is false and visible is false" time="0.011">
-      <failure>ReferenceError: props is not defined
-    at TestComponent (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:9:43)
-    at renderWithHooks (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
-    at mountIndeterminateComponent (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:20103:13)
-    at beginWork (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:21626:16)
-    at beginWork$1 (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:27465:14)
-    at performUnitOfWork (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:26599:12)
-    at workLoopSync (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:26505:5)
-    at renderRootSync (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:26473:7)
-    at recoverFromConcurrentError (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:25889:20)
-    at performConcurrentWorkOnRoot (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react-dom/cjs/react-dom.development.js:25789:22)
-    at flushActQueue (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react/cjs/react.development.js:2667:24)
-    at act (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/react/cjs/react.development.js:2582:11)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/@testing-library/react/dist/act-compat.js:47:25
-    at renderRoot (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/@testing-library/react/dist/pure.js:180:26)
-    at render (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/@testing-library/react/dist/pure.js:271:10)
-    at Object.&lt;anonymous&gt; (/Users/darshanpatel0919/code/oa-questions/controlVisibility/src/__tests__/sample.test.js:292:35)
-    at Object.asyncJestTest (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:45:12
-    at new Promise (&lt;anonymous&gt;)
-    at mapper (/Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:28:19)
-    at /Users/darshanpatel0919/code/oa-questions/controlVisibility/node_modules/jest-jasmine2/build/queueRunner.js:75:41</failure>
+    <testcase classname="Tests › withVisibility HOC" name="should render null when loading is false and visible is false" time="0.002">
     </testcase>
   </testsuite>
 </testsuites>
