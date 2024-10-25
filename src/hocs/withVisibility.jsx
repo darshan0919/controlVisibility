@@ -17,5 +17,13 @@ export const withVisibility = (Component) => (props) => {
     Based on 'loading' and 'visible' flags show either 'Loader' or 'ContentHiddenPlaceholder' or 'Component' itself
   */
 
-  return <Component {...restProps} />;
+  if (loading) {
+    return <Loader {...restProps} />;
+  }
+
+  return visible ? (
+    <Component {...restProps} />
+  ) : (
+    <ContentHiddenPlaceholder {...restProps} />
+  );
 };

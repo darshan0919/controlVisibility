@@ -6,7 +6,7 @@ export const useValidateCondition = (conditionsConfig) => {
 
   // Implement the logic for checking the condition against a context using "Condition" class
   return {
-    visible: true,
+    visible: !conditionsConfig || conditionsConfig.condition.matches(context),
     loading,
   };
 };

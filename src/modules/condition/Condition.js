@@ -16,15 +16,15 @@ export class Condition {
     // Implement the functionality for validating the the condition for given context
     switch (this.type) {
       case CONDITION_TYPES['EQUALS']:
-
+        return fieldValue === this.value;
       case CONDITION_TYPES['NOT_EQUALS']:
-
+        return fieldValue !== this.value;
       case CONDITION_TYPES['AND']:
-
+        return this.conditions.every((condition) => condition.matches(context));
       case CONDITION_TYPES['OR']:
-
+        return this.conditions.some((condition) => condition.matches(context));
       default:
-        return undefined;
+        return true;
     }
   }
 }
